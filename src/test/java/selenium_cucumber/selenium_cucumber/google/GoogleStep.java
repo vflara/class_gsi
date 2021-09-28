@@ -42,7 +42,7 @@ public class GoogleStep {
 		String criteria = Setup.getValueStore("searchcriteria").toString();
 		List<WebElement> list = googleSearchPage
 				.getWebElements(By.xpath("//h3[contains(translate(text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', '" + criteria
-						+ "'),'cut" + criteria + "')]"));
+						+ "'),'" + criteria + "')]"));
 		assertTrue("There is not matches for this criteria: " + criteria, list.size() > 0);
 
 	}
