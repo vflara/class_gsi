@@ -22,15 +22,15 @@ public class PageObject {
 		Setup.openUrl(System.getProperty("defaultURL").concat("/").concat(urlpath));
 	}
 
-	public WebElement getWebElement(By by) {
+	protected WebElement getWebElement(By by) {
 		return this.driver.findElement(by);
 	}
 
-	public List<WebElement> getWebElements(By by) {
+	protected List<WebElement> getWebElements(By by) {
 		return this.driver.findElements(by);
 	}
 
-	public void cliksOnButton(By by) {
+	protected void cliksOnButton(By by) {
 		getWebElement(by).click();
 		Setup.getWait().waitForLoading(10000);
 		;

@@ -26,23 +26,19 @@ public class GoogleStep {
 	}
 
 	public void typeInSearchfield(String searchcriteria) {
-		googleSearchPage.getWebElement(By.xpath("//input[@title='Search' and @role='combobox']"))
-				.sendKeys(searchcriteria);
+		googleSearchPage.fillInputSerachField(searchcriteria);
 		Setup.setKeyValueStore("searchcriteria", searchcriteria);
 
 	}
 
 	public void clicksOnbutton(String string) {
-		googleSearchPage.cliksOnButton(By.xpath(
-				"//div[contains(@class,'FPdoLc')]/descendant::input[@value='Google Search' and @type='submit']"));
+		googleSearchPage.clicksOnButtonSerach();
 
 	}
 
 	public void checkSearching() {
 		String criteria = Setup.getValueStore("searchcriteria").toString();
-		List<WebElement> list = googleSearchPage
-				.getWebElements(By.xpath("//h3[contains(translate(text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', '" + criteria
-						+ "'),'" + criteria + "')]"));
+		List<WebElement> list = googleSearchPage.getAllH3Tag(criteria);
 		assertTrue("There is not matches for this criteria: " + criteria, list.size() > 0);
 
 	}
