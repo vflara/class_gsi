@@ -9,17 +9,17 @@ public class LoginStepDefinition {
 	}
 
 	@Given("The unauthenticated GoHeavy User is in the Login view")
-	public void the_unauthenticated_go_heavy_user_is_in_the_view(String string) {
+	public void the_unauthenticated_go_heavy_user_is_in_the_view() {
 
 	}
 
-	@When("User insert email {string} and password {string1}")
-	public void user_insert_email_and_password(String string, String string1) {
-
+	@When("User insert email {string} and password {string}")
+	public void user_insert_email_and_password(String string, String string2) {
+	    
 	}
 
-	@When("User clicks on the {string} button")
-	public void user_clicks_on_the_button(String string) {
+	@When("User clicks on the \"Sign in\" button")
+	public void user_clicks_on_the_button() {
 
 	}
 

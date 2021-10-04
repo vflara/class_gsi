@@ -20,9 +20,9 @@ public final class Setup {
 	private static Actions actions;
 	private static WaitingObject waitingObject;
 
-	private static String defaultURL = "https://www.google.com";
+	private static String defaultURL = "https://webgoheavy-testing.gsoftinnovation.net/admin/";
 
-	@Before
+	// @Before
 	public void InitSetup() {
 		String browser = System.getProperty("browser");
 		System.setProperty("webdriver.chrome.driver", "D://Documents//QA-Automation//Google//chromedriver.exe");
