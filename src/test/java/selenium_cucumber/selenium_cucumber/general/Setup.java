@@ -5,6 +5,7 @@ import io.cucumber.java.Before;
 
 import java.util.HashMap;
 
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -20,9 +21,9 @@ public final class Setup {
 	private static Actions actions;
 	private static WaitingObject waitingObject;
 
-	private static String defaultURL = "https://webgoheavy-testing.gsoftinnovation.net/admin/";
+	private static String defaultURL = "https://webgoheavy-testing.gsoftinnovation.net/admin";
 
-	// @Before
+	 @Before
 	public void InitSetup() {
 		String browser = System.getProperty("browser");
 		System.setProperty("webdriver.chrome.driver", "D://Documents//QA-Automation//Google//chromedriver.exe");

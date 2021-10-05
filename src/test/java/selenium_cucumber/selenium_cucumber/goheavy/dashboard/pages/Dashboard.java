@@ -1,4 +1,4 @@
-package selenium_cucumber.selenium_cucumber.goheavy.dashboard.login;
+package selenium_cucumber.selenium_cucumber.goheavy.dashboard.pages;
 
 import selenium_cucumber.selenium_cucumber.general.PageObject;
 

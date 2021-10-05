@@ -1,5 +1,6 @@
 package selenium_cucumber.selenium_cucumber.general;
 
+import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -70,9 +71,14 @@ public class WaitingObject {
 	 * @param time
 	 */
 	public void waitUntilElementDisappear(By by, int time) {
-		WebElement element1 = driver.findElement(by);
+		WebElement element1 = null;
+		try {
+			element1 = driver.findElement(by);
+		} catch (Exception e) {
+			return;
+		}
 		ExpectedCondition expectedCondition = ExpectedConditions.invisibilityOf(element1);
-		String mss = "Element " + element1 + " not found";
+		String mss = "Element " + element1 + " still in dom ";
 		executeExpectedCondition(expectedCondition, mss, time);
 
 	}

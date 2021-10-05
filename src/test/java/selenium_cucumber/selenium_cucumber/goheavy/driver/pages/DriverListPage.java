@@ -1,4 +1,4 @@
-package selenium_cucumber.selenium_cucumber.goheavy.driver.login;
+package selenium_cucumber.selenium_cucumber.goheavy.driver.pages;
 
 import selenium_cucumber.selenium_cucumber.general.PageObject;
 
