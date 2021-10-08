@@ -28,8 +28,12 @@ public class LoginStep {
 		}
 	}
 
-	public void the_unauthenticated_go_heavy_user_is_in_the_view() {
+	public void openURL() {
 		loginPage.openURL();
+	}
+
+	public void the_unauthenticated_go_heavy_user_is_in_the_view() {
+		this.openURL();
 		checkPage();
 
 	}

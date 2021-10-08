@@ -1,6 +1,10 @@
 package selenium_cucumber.selenium_cucumber.goheavy.login;
 
+import java.io.InputStream;
+import java.util.Properties;
+
 import io.cucumber.java.en.*;
+import selenium_cucumber.selenium_cucumber.general.Setup;
 import selenium_cucumber.selenium_cucumber.general.Steps;
 import selenium_cucumber.selenium_cucumber.goheavy.dashboard.DashboardStep;
 import selenium_cucumber.selenium_cucumber.goheavy.driver.DriverStep;
@@ -38,17 +42,27 @@ public class LoginStepDefinition {
 	@Then("Sytem redirects to {string} view")
 	public void sytem_redirects_to_dashboard_view(String string) {
 		Steps view = new DashboardStep();
-		// Convert Steps to Abstract class
-		switch (string) {
-		case "Drivers List":
+		if ("Drivers List".equalsIgnoreCase(string))
 			view = new DriverStep();
-			break;
-
-		case "Fleet Owners List":
+		else if ("Fleet Owners List".equalsIgnoreCase(string))
 			view = new FleetStep();
-			break;
-		}
+
 		view.checkPage();
 
 	}
+
+	// Class #2
+
+	@Given("Any user is logged")
+	public void any_user_is_logged() {
+		Properties cred = (Properties) Setup.getValueStore("defaultProperties");
+		String email = cred.getProperty("defaul.email");
+		String pass = cred.getProperty("defaul.password");
+		// mock we get the data from excel or any file
+		loginStep.openURL();
+		loginStep.user_insert_email_and_password(email, pass);
+		loginStep.user_clicks_on_the_button();
+
+	}
+
 }

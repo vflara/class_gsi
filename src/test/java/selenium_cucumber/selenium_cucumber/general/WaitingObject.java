@@ -16,6 +16,7 @@ public class WaitingObject {
 
 	public WaitingObject(WebDriver driver) {
 		this.driver = driver;
+		this.waitForLoading(20);
 	}
 
 	/**
@@ -103,7 +104,7 @@ public class WaitingObject {
 		if (!msg.equals("")) {
 			wait.withMessage(msg);
 		}
-		return wait.until(ExpectedConditions.visibilityOf(driver.findElement(by)));
+		return wait.until(ExpectedConditions.visibilityOfElementLocated(by));
 	}
 
 	/**
