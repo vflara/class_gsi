@@ -9,22 +9,23 @@ import selenium_cucumber.selenium_cucumber.general.PageObject;
 
 public class GoogleSearchPage extends PageObject {
 
-	public GoogleSearchPage() {
-		super();
-		this.urlpath = "";
-	}
+    public GoogleSearchPage() {
+        super();
+        this.urlpath = "";
+    }
 
-	public void fillInputSerachField(String searchcriteria) {
-		this.getWebElement(By.xpath("//input[@title='Search' and @role='combobox']")).sendKeys(searchcriteria);
-	}
+    public void fillInputSerachField(String searchcriteria) {
+        this.getWebElement(By.xpath("//input[@title='Search' and @role='combobox']")).sendKeys(searchcriteria);
+    }
 
-	public void clicksOnButtonSerach() {
-		cliksOnButton(By.xpath(
-				"//div[contains(@class,'FPdoLc')]/descendant::input[@value='Google Search' and @type='submit']"));
-	}
+    public void clicksOnButtonSerach() {
+        cliksOnButton(By.xpath(
+                "//div[contains(@class,'FPdoLc')]/descendant::input[@value='Google Search' and @type='submit']"));
+    }
 
-	public List<WebElement> getAllH3Tag(String textcriteria) {
-		return this.getWebElements(By.xpath("//h3[contains(translate(text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', '"
-				+ textcriteria + "'),'" + textcriteria + "')]"));
-	}
+    public List<WebElement> getAllaTag(String textcriteria) {
+        String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        return this.getWebElements(By.xpath("//h3[contains(translate(text(),'" + alphabet + "', '"
+                + alphabet.toLowerCase() + "'),'" + textcriteria + "')]/ancestor::a"));
+    }
 }

@@ -25,7 +25,7 @@ public final class Setup {
 	@Before
 	public void InitSetup() {
 		String browser = System.getProperty("browser");
-		System.setProperty("webdriver.chrome.driver", "D://Documents//QA-Automation//Google//chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "D://Documents//QA-Automation//Google//chromedriver_95.exe");
 		ChromeOptions options = new ChromeOptions();
 		driver = new ChromeDriver(options);
 		initObject();

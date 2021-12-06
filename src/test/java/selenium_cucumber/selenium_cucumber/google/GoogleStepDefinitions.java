@@ -32,4 +32,16 @@ public class GoogleStepDefinitions {
 		
 	}
 
+
+	@When("User clicks in any result items")
+	public void user_clicks_any_result_item() {
+		googleStep.user_clicks_any_result_item();
+	}
+
+	@Then("New URL should contains the link reference")
+	public void url_should_contains_link_reference() {
+		googleStep.url_should_contains_link_reference();
+
+	}
+
 }
