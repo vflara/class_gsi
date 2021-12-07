@@ -46,23 +46,9 @@ public class LoginStepDefinition {
 			view = new DriverStep();
 		else if ("Fleet Owners List".equalsIgnoreCase(string))
 			view = new FleetStep();
-
 		view.checkPage();
 
 	}
 
-	// Class #2
-
-	@Given("Any user is logged")
-	public void any_user_is_logged() {
-		Properties cred = (Properties) Setup.getValueStore("defaultProperties");
-		String email = cred.getProperty("defaul.email");
-		String pass = cred.getProperty("defaul.password");
-		// mock we get the data from excel or any file
-		loginStep.openURL();
-		loginStep.user_insert_email_and_password(email, pass);
-		loginStep.user_clicks_on_the_button();
-
-	}
 
 }
