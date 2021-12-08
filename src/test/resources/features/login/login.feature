@@ -1,5 +1,6 @@
 Feature: Test
 
+
   Scenario Outline: Allowing and redirecting user according to its access
     Given The unauthenticated GoHeavy User is in the Login view
     When User insert email "<emails>" and password "<passwords>"

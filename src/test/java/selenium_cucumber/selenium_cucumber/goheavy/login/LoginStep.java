@@ -6,11 +6,13 @@ import java.util.NoSuchElementException;
 
 import org.junit.Assert;
 
+import selenium_cucumber.selenium_cucumber.general.Setup;
 import selenium_cucumber.selenium_cucumber.goheavy.login.page.LoginPage;
 
 public class LoginStep {
 
 	private LoginPage loginPage;
+	String name="";
 
 	public LoginStep() {
 		loginPage = new LoginPage();
