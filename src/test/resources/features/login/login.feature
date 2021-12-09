@@ -6,7 +6,7 @@ Feature: Test
     When User insert email "<emails>" and password "<passwords>"
     And User clicks on the "Sign in" button
     Then The system allows the user access to the system
-    And Sytem redirects to "<views>" view
+    And System redirects to "<views>" view
 
     Examples: 
       | emails             | passwords | views             |

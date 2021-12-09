@@ -39,7 +39,7 @@ public class LoginStepDefinition {
 
 	}
 
-	@Then("Sytem redirects to {string} view")
+	@Then("System redirects to {string} view")
 	public void sytem_redirects_to_dashboard_view(String string) {
 		Steps view = new DashboardStep();
 		if ("Drivers List".equalsIgnoreCase(string))
