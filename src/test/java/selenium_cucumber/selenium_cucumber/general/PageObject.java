@@ -18,7 +18,7 @@ public class PageObject {
 	}
 
 	public void openURL() {
-		String urll=System.getProperty("defaultURL");
+		String url=System.getProperty("defaultURL");
 		Setup.openUrl(System.getProperty("defaultURL").concat("/").concat(urlpath));
 	}
 
